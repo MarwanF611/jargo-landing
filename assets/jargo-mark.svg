@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="236 110 332 402" role="img" aria-label="Jargo">
+  <defs>
+    <linearGradient id="jg-green" x1="270" y1="335" x2="470" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#94dd45"/>
+      <stop offset=".45" stop-color="#6ccf4d"/>
+      <stop offset=".8" stop-color="#2bb25f"/>
+      <stop offset="1" stop-color="#08a46a"/>
+    </linearGradient>
+    <linearGradient id="jg-fold" x1="412" y1="400" x2="460" y2="446" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a9460"/>
+      <stop offset="1" stop-color="#055e3e"/>
+    </linearGradient>
+    <linearGradient id="jg-navy" x1="356" y1="118" x2="560" y2="446" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#142f4e"/>
+      <stop offset="1" stop-color="#0a1f38"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#jg-green)" d="M262 324 L320 324 C336 325 344 334 346 344 C350 370 366 404 388 416 C396 420 404 419 412 414 C430 402 446 388 460 368 L560 368 L560 376 C558 444 498 496 420 503 C320 514 246 448 244 360 L244 342 Q244 324 262 324 Z"/>
+  <path fill="url(#jg-fold)" d="M412 414 C430 402 446 388 460 368 L460 446 C440 441 424 432 412 414 Z"/>
+  <path fill="url(#jg-navy)" d="M386 118 L546 118 Q560 118 560 132 L560 376 C554 410 526 436 496 442 C484 445 472 446 460 446 L460 214 L384 214 Q356 214 356 186 L356 146 Q356 118 386 118 Z"/>
+</svg>

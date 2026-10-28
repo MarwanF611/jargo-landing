@@ -10,12 +10,15 @@
   <meta property="og:title" content="Jargo — Leer Nederlands. Werk veilig. Communiceer beter.">
   <meta property="og:description" content="Praktische taallessen voor jouw werk. Kort, duidelijk en in jouw eigen taal uitgelegd. Binnenkort beschikbaar.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/jargo-logo.png">
-  <link rel="icon" type="image/png" href="assets/jargo-mark.png">
-  <link rel="apple-touch-icon" href="assets/jargo-logo.png">
+  <meta property="og:image" content="assets/jargo-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="icon" type="image/svg+xml" href="assets/jargo-mark.svg">
+  <link rel="icon" type="image/png" href="assets/jargo-icon.png">
+  <link rel="apple-touch-icon" href="assets/jargo-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Manrope:wght@500;600;700;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
       --navy-950: #071a2e;
@@ -42,6 +45,7 @@
       --shadow-sm: 0 4px 14px #09213712;
       --shadow-lg: 0 24px 70px #05182a29;
       --display: Manrope, "DM Sans", system-ui, sans-serif;
+      --wordmark: Poppins, Manrope, system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -83,8 +87,8 @@
     header { position: relative; z-index: 2; padding: 22px 0; }
     header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
-    .brand img { width: 30px; height: auto; }
-    .brand span { font: 800 23px/1 var(--display); letter-spacing: -0.02em; color: var(--navy-900); }
+    .brand img { width: 27px; height: auto; }
+    .brand span { font: 700 24px/1 var(--wordmark); letter-spacing: -0.02em; color: #0b1f38; }
     .nav { display: flex; align-items: center; gap: 22px; }
     .nav a.link {
       display: inline-flex; align-items: center; gap: 6px;
@@ -272,8 +276,8 @@
     .preview { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
     .preview .stage::before { background: var(--blue-100); top: 60px; }
     .home .s-top { padding-bottom: 14px; }
-    .home .s-bar .brandmini { display: flex; align-items: center; gap: 7px; font: 800 15px/1 var(--display); color: var(--navy-900); }
-    .home .s-bar .brandmini img { width: 18px; }
+    .home .s-bar .brandmini { display: flex; align-items: center; gap: 6px; font: 700 15px/1 var(--wordmark); letter-spacing: -0.02em; color: #0b1f38; }
+    .home .s-bar .brandmini img { width: 16px; }
     .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-100); display: grid; place-items: center; font-size: 10.5px; font-weight: 700; color: var(--navy-900); position: relative; }
     .avatar::after { content: ""; position: absolute; right: 0; bottom: 1px; width: 7px; height: 7px; border-radius: 50%; background: var(--green-500); border: 1.5px solid #fff; }
     .home .s-body { padding-top: 18px; }
@@ -343,7 +347,9 @@
 
     /* Final CTA */
     .final { text-align: center; padding: 112px 0 96px; }
-    .final img { width: 88px; margin: 0 auto 8px; }
+    .lockup { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; margin-bottom: 10px; }
+    .lockup img { width: 72px; height: auto; }
+    .lockup span { font: 700 44px/1 var(--wordmark); letter-spacing: -0.02em; color: #0b1f38; }
     .final h2 { margin-left: auto; margin-right: auto; max-width: 14em; }
     .final p { color: var(--muted); font-size: 18px; margin: 0 auto 30px; max-width: 30em; }
     .final form.waitlist { margin: 0 auto; }
@@ -388,7 +394,7 @@
   <header>
     <div class="wrap">
       <a class="brand" href="./" aria-label="Jargo, naar het begin">
-        <img src="assets/jargo-mark.png" alt="" width="89" height="102">
+        <img src="assets/jargo-mark.svg" alt="" width="83" height="100">
         <span>Jargo</span>
       </a>
       <nav class="nav">
@@ -532,7 +538,7 @@
             <div class="screen">
               <div class="s-top">
                 <div class="s-bar">
-                  <span class="brandmini"><img src="assets/jargo-mark.png" alt=""> Jargo</span>
+                  <span class="brandmini"><img src="assets/jargo-mark.svg" alt=""> Jargo</span>
                   <span class="avatar">AK</span>
                 </div>
               </div>
@@ -607,7 +613,7 @@
     <!-- Final CTA -->
     <section class="final">
       <div class="wrap">
-        <img src="assets/jargo-logo.png" alt="Jargo" width="150" height="158">
+        <div class="lockup" role="img" aria-label="Jargo"><img src="assets/jargo-mark.svg" alt="" width="83" height="100"><span aria-hidden="true">Jargo</span></div>
         <h2>Wees er als eerste bij.</h2>
         <p>Jargo komt binnenkort. Laat je e-mailadres achter en we sturen je een bericht zodra je kunt starten.</p>
         <form class="waitlist" novalidate>
