@@ -3,308 +3,619 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jargo — Binnenkort</title>
-  <meta name="description" content="Jargo: korte audiolessen werkplek-Nederlands voor wie werkt in logistiek, haven, schoonmaak en productie. Binnenkort beschikbaar.">
-  <meta name="theme-color" content="#14213d">
-  <meta property="og:title" content="Jargo — Nederlands voor op de werkvloer">
-  <meta property="og:description" content="Korte audiolessen van 5 tot 10 minuten. Luisteren en spreken, in je eigen tempo. Binnenkort beschikbaar.">
+  <title>Jargo — Nederlands voor op de werkvloer</title>
+  <meta name="description" content="Jargo: korte, praktische taallessen Nederlands voor jouw werk. Luisteren, nazeggen en uitleg in je eigen taal. Binnenkort beschikbaar.">
+  <meta name="theme-color" content="#f4f7f6">
+  <meta name="color-scheme" content="light">
+  <meta property="og:title" content="Jargo — Leer Nederlands. Werk veilig. Communiceer beter.">
+  <meta property="og:description" content="Praktische taallessen voor jouw werk. Kort, duidelijk en in jouw eigen taal uitgelegd. Binnenkort beschikbaar.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314213d'/%3E%3Cg fill='%23ffb547'%3E%3Crect x='13' y='26' width='6' height='12' rx='3'/%3E%3Crect x='23' y='18' width='6' height='28' rx='3'/%3E%3Crect x='33' y='12' width='6' height='40' rx='3'/%3E%3Crect x='43' y='22' width='6' height='20' rx='3'/%3E%3C/g%3E%3C/svg%3E">
+  <meta property="og:image" content="assets/jargo-logo.png">
+  <link rel="icon" type="image/png" href="assets/jargo-mark.png">
+  <link rel="apple-touch-icon" href="assets/jargo-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbf7f0;
+      --navy-950: #071a2e;
+      --navy-900: #0b2541;
+      --navy-800: #123553;
+      --navy-700: #1d4b6d;
+      --green-600: #13a86f;
+      --green-500: #24c787;
+      --green-400: #4ed9a2;
+      --green-100: #dcf8ed;
+      --green-50: #effbf6;
+      --blue-100: #e9f2fb;
+      --purple-100: #f1ecfb;
+      --orange-100: #fff1e5;
+      --yellow-100: #fff5d7;
+      --ink: #13293d;
+      --muted: #66788a;
+      --line: #e3e9ed;
       --surface: #ffffff;
-      --ink: #14213d;
-      --ink-soft: #4a5571;
-      --line: #e8e1d4;
-      --accent: #ffb547;
-      --accent-ink: #14213d;
-      --accent-deep: #e58e00;
-      --chip: #f3ecdf;
-      --ok: #1f7a4d;
-      --shadow: 0 1px 2px rgba(20,33,61,.06), 0 8px 24px rgba(20,33,61,.08);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --bg: #0e1628;
-        --surface: #16213a;
-        --ink: #f4efe6;
-        --ink-soft: #a9b2c7;
-        --line: #26324f;
-        --accent: #ffb547;
-        --accent-ink: #14213d;
-        --accent-deep: #ffc56e;
-        --chip: #1d2a47;
-        --ok: #5fd39a;
-        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
-      }
-    }
-    :root[data-theme="dark"] {
-      --bg: #0e1628;
-      --surface: #16213a;
-      --ink: #f4efe6;
-      --ink-soft: #a9b2c7;
-      --line: #26324f;
-      --accent: #ffb547;
-      --accent-ink: #14213d;
-      --accent-deep: #ffc56e;
-      --chip: #1d2a47;
-      --ok: #5fd39a;
-      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+      --canvas: #f4f7f6;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-sm: 0 4px 14px #09213712;
+      --shadow-lg: 0 24px 70px #05182a29;
+      --display: Manrope, "DM Sans", system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     html, body { margin: 0; }
     body {
-      background: var(--bg);
+      background: var(--canvas);
       color: var(--ink);
-      font: 400 17px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font: 400 16px/1.6 "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      overflow-x: hidden;
     }
     a { color: inherit; }
-    .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+    [data-lucide], svg.lucide { width: 18px; height: 18px; stroke-width: 2.2; flex: none; }
 
-    /* Header */
-    header { padding: 28px 0; }
-    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo svg { width: 36px; height: 36px; flex: none; }
-    .logo span {
-      font-family: "Bricolage Grotesque", Inter, sans-serif;
-      font-weight: 800; font-size: 26px; letter-spacing: -0.02em;
+    /* ---------- Buttons & chips ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font: 700 16px/1 "DM Sans", sans-serif; text-decoration: none; cursor: pointer;
+      border-radius: 12px; padding: 15px 22px; border: 0;
+      transition: transform .12s, box-shadow .15s, background .15s;
     }
-    .badge {
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--green-500); color: var(--navy-950); box-shadow: 0 8px 20px #24c78733; }
+    .btn-primary:hover { background: var(--green-400); }
+    .btn-ghost { background: var(--surface); color: var(--navy-900); border: 1px solid var(--line); }
+    .btn-ghost:hover { border-color: #c9d4db; }
+    .eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 14px; font-weight: 600; color: var(--ink-soft);
-      background: var(--chip); border-radius: 999px; padding: 6px 14px;
+      font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--green-600); background: var(--green-100);
+      padding: 7px 14px; border-radius: 999px;
     }
-    .badge::before {
-      content: ""; width: 8px; height: 8px; border-radius: 50%;
-      background: var(--accent-deep);
-      animation: pulse 1.8s ease-in-out infinite;
-    }
-    @keyframes pulse { 50% { opacity: .3; } }
+    .eyebrow [data-lucide], .eyebrow svg { width: 15px; height: 15px; }
 
-    /* Hero */
-    main { flex: 1; }
-    .hero {
-      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px;
-      align-items: center; padding: 40px 0 72px;
+    /* ---------- Header ---------- */
+    header { position: relative; z-index: 2; padding: 22px 0; }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand img { width: 30px; height: auto; }
+    .brand span { font: 800 23px/1 var(--display); letter-spacing: -0.02em; color: var(--navy-900); }
+    .nav { display: flex; align-items: center; gap: 22px; }
+    .nav a.link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-weight: 700; color: var(--navy-700); text-decoration: none;
     }
-    h1 {
-      font-family: "Bricolage Grotesque", Inter, sans-serif;
-      font-weight: 800; font-size: clamp(40px, 6vw, 68px);
-      line-height: 1.02; letter-spacing: -0.035em; margin: 0 0 20px;
-      text-wrap: balance;
-    }
-    h1 mark {
-      background: linear-gradient(transparent 62%, var(--accent) 62%, var(--accent) 92%, transparent 92%);
-      color: inherit; padding: 0 2px;
-    }
-    .lead { font-size: 19px; color: var(--ink-soft); max-width: 34em; margin: 0 0 32px; }
-
-    /* Waitlist */
-    form { display: flex; gap: 10px; max-width: 480px; flex-wrap: wrap; }
-    label.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-    input[type="email"] {
-      flex: 1 1 220px; min-width: 0;
-      font: inherit; color: var(--ink);
-      background: var(--surface); border: 1.5px solid var(--line);
-      border-radius: 14px; padding: 14px 16px; outline: none;
-      transition: border-color .15s;
-    }
-    input[type="email"]:focus { border-color: var(--accent-deep); }
-    button.cta {
-      font: 600 16px/1 Inter, sans-serif; cursor: pointer;
-      background: var(--accent); color: var(--accent-ink);
-      border: 0; border-radius: 14px; padding: 15px 22px;
-      transition: transform .1s, filter .15s;
-    }
-    button.cta:hover { filter: brightness(1.05); }
-    button.cta:active { transform: translateY(1px); }
-    .form-note { font-size: 14px; color: var(--ink-soft); margin: 12px 0 0; min-height: 1.4em; }
-    .form-note.ok { color: var(--ok); font-weight: 500; }
-
-    /* Phone / demo card */
-    .demo {
+    .nav a.link:hover { color: var(--green-600); }
+    .soon {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13.5px; font-weight: 700; color: var(--navy-700);
       background: var(--surface); border: 1px solid var(--line);
-      border-radius: 28px; padding: 28px; box-shadow: var(--shadow);
+      padding: 7px 14px; border-radius: 999px;
     }
-    .demo-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
-    .demo-top strong { font-family: "Bricolage Grotesque", Inter, sans-serif; font-size: 20px; letter-spacing: -0.01em; }
-    .demo-top small { color: var(--ink-soft); font-size: 13px; }
-    .demo p.hint { color: var(--ink-soft); font-size: 14px; margin: 0 0 18px; }
+    .soon::before {
+      content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green-500);
+      box-shadow: 0 0 0 0 #24c78780; animation: ping 2s infinite;
+    }
+    @keyframes ping { 70% { box-shadow: 0 0 0 7px #24c78700; } 100% { box-shadow: 0 0 0 0 #24c78700; } }
 
-    .wave { display: flex; align-items: center; justify-content: center; gap: 5px; height: 72px; margin: 4px 0 20px; }
-    .wave i {
-      display: block; width: 6px; border-radius: 3px; background: var(--accent);
-      height: 18%; transition: height .2s;
+    /* ---------- Hero ---------- */
+    .hero { position: relative; padding: 36px 0 96px; }
+    .hero::before {
+      content: ""; position: absolute; inset: -140px auto auto -180px; width: 620px; height: 620px;
+      background: radial-gradient(closest-side, #dcf8edcc, transparent); pointer-events: none;
     }
-    .wave.live i { animation: bar 0.9s ease-in-out infinite; }
-    @keyframes bar { 0%,100% { height: 18%; } 50% { height: var(--h, 80%); } }
+    .hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+    h1 {
+      font: 500 clamp(42px, 5.6vw, 66px)/1.04 var(--display);
+      letter-spacing: -0.04em; color: var(--navy-950); margin: 22px 0 20px;
+    }
+    h1 .g { color: var(--green-600); }
+    .lead { font-size: 19px; color: var(--muted); max-width: 30em; margin: 0 0 30px; }
 
-    .phrases { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-    .phrase {
-      width: 100%; display: flex; align-items: center; gap: 14px; text-align: left;
-      font: inherit; color: inherit; cursor: pointer;
-      background: var(--chip); border: 1.5px solid transparent;
-      border-radius: 16px; padding: 12px 14px;
-      transition: border-color .15s, background .15s;
+    form.waitlist {
+      display: flex; gap: 8px; max-width: 500px; padding: 6px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+      box-shadow: var(--shadow-sm);
     }
-    .phrase:hover, .phrase:focus-visible { border-color: var(--accent); outline: none; }
-    .phrase.playing { border-color: var(--accent-deep); }
-    .phrase .play {
-      flex: none; width: 38px; height: 38px; border-radius: 50%;
-      background: var(--ink); color: var(--bg);
-      display: grid; place-items: center;
+    form.waitlist input {
+      flex: 1; min-width: 0; font: inherit; font-size: 16px; color: var(--ink);
+      border: 0; outline: none; background: transparent; padding: 0 12px;
     }
-    .phrase .play svg { width: 14px; height: 14px; margin-left: 2px; }
-    .phrase b { display: block; font-weight: 600; font-size: 16px; line-height: 1.35; }
-    .phrase span { display: block; font-size: 13px; color: var(--ink-soft); }
+    form.waitlist input::placeholder { color: #9aa9b6; }
+    form.waitlist:focus-within { border-color: var(--green-500); }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .form-note { font-size: 14px; color: var(--muted); margin: 12px 0 0; min-height: 1.5em; }
+    .form-note.ok { color: var(--green-600); font-weight: 600; }
+    .form-note.err { color: #d84b46; font-weight: 600; }
 
-    /* Features */
-    .features {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-      padding: 8px 0 72px;
-    }
-    .feature { border-top: 2px solid var(--ink); padding-top: 18px; }
-    .feature .num {
-      font-family: "Bricolage Grotesque", Inter, sans-serif;
-      font-weight: 800; font-size: 34px; letter-spacing: -0.03em; line-height: 1;
-      margin-bottom: 10px;
-    }
-    .feature h3 { margin: 0 0 6px; font-size: 17px; }
-    .feature p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 22px; color: var(--muted); font-size: 14px; font-weight: 600; }
+    .meta span { display: inline-flex; align-items: center; gap: 7px; }
+    .meta [data-lucide], .meta svg { width: 16px; height: 16px; color: var(--green-600); }
 
-    /* Employers band */
-    .band {
-      background: var(--ink); color: var(--bg);
-      border-radius: 28px; padding: 40px;
-      display: flex; align-items: center; justify-content: space-between; gap: 32px;
-      margin-bottom: 72px;
+    /* ---------- Phone mockup ---------- */
+    .stage { position: relative; display: flex; flex-direction: column; align-items: center; }
+    .stage::before {
+      content: ""; position: absolute; top: 30px; width: 440px; height: 440px; max-width: 110%;
+      border-radius: 50%; background: var(--green-100); opacity: .7;
     }
-    .band h2 {
-      font-family: "Bricolage Grotesque", Inter, sans-serif;
-      font-weight: 800; font-size: clamp(26px, 3.4vw, 36px); line-height: 1.1;
-      letter-spacing: -0.025em; margin: 0 0 8px;
+    .phone {
+      position: relative; width: 300px; border-radius: 44px; padding: 9px;
+      background: var(--navy-900); box-shadow: var(--shadow-lg);
     }
-    .band p { margin: 0; opacity: .8; max-width: 36em; }
-    .band a.btn {
-      flex: none; text-decoration: none; font-weight: 600;
-      background: var(--accent); color: var(--accent-ink);
-      border-radius: 14px; padding: 15px 22px; white-space: nowrap;
+    .phone::before {
+      content: ""; position: absolute; top: 9px; left: 50%; translate: -50% 0;
+      width: 96px; height: 24px; background: var(--navy-900); border-radius: 0 0 16px 16px; z-index: 3;
     }
+    .screen {
+      position: relative; border-radius: 36px; overflow: hidden; background: var(--canvas);
+      height: 600px; display: flex; flex-direction: column;
+    }
+    .s-top { background: var(--surface); padding: 38px 16px 12px; }
+    .s-bar { display: flex; align-items: center; justify-content: space-between; }
+    .s-bar b { font: 700 14px/1 var(--display); color: var(--navy-950); }
+    .s-bar small { font-size: 11px; color: var(--muted); width: 30px; text-align: right; }
+    .circle-btn {
+      width: 30px; height: 30px; border-radius: 50%; background: var(--blue-100);
+      display: grid; place-items: center; color: var(--navy-900);
+    }
+    .circle-btn svg { width: 15px; height: 15px; }
+    .progress { height: 5px; border-radius: 9px; background: var(--line); margin-top: 12px; overflow: hidden; }
+    .progress i { display: block; height: 100%; width: 38%; background: var(--green-500); border-radius: inherit; transition: width .4s ease; }
+    .s-body { flex: 1; padding: 16px 14px 0; }
+    .s-body h4 { margin: 0; font: 700 15px/1.3 var(--display); color: var(--navy-950); }
+    .s-body p.sub { margin: 2px 0 12px; font-size: 11px; color: var(--muted); }
+    .visual {
+      position: relative; height: 158px; border-radius: 14px;
+      display: grid; place-items: center; transition: background .3s;
+    }
+    .visual svg { width: 72px; height: 72px; stroke-width: 1.6; color: var(--navy-900); }
+    .visual .tag {
+      position: absolute; left: 10px; bottom: 10px;
+      font-size: 9.5px; font-weight: 700; letter-spacing: .08em; color: #fff;
+      background: var(--navy-900); padding: 4px 8px; border-radius: 6px;
+    }
+    .word {
+      margin-top: 10px; background: var(--surface); border: 1px solid var(--line);
+      border-radius: 16px; padding: 14px 14px 12px;
+    }
+    .word .lbl { font-size: 9.5px; font-weight: 700; letter-spacing: .1em; color: var(--green-600); }
+    .word-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .word-row strong { display: block; font: 600 27px/1.15 var(--display); letter-spacing: -0.02em; color: var(--navy-950); margin-top: 4px; }
+    .word-row em { display: block; font-style: normal; font-size: 12px; color: var(--muted); }
+    .speak {
+      flex: none; width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+      background: var(--green-500); color: #fff; display: grid; place-items: center;
+      transition: transform .15s, background .15s;
+    }
+    .speak:hover { background: var(--green-600); }
+    .speak.on { animation: beat .6s ease-in-out infinite alternate; }
+    @keyframes beat { to { transform: scale(1.1); box-shadow: 0 0 0 8px #24c78726; } }
+    .speak svg { width: 19px; height: 19px; }
+    .trans { display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--line); margin-top: 12px; padding-top: 10px; }
+    .trans .code {
+      width: 28px; height: 22px; border-radius: 6px; background: var(--blue-100); color: var(--navy-700);
+      font-size: 9.5px; font-weight: 700; display: grid; place-items: center;
+    }
+    .trans small { display: block; font-size: 8.5px; font-weight: 700; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
+    .trans b { display: block; font-size: 13.5px; color: var(--navy-950); line-height: 1.3; }
+    .s-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 12px 16px; background: var(--surface); border-top: 1px solid var(--line); }
+    .s-foot button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      font: 700 12.5px/1 "DM Sans", sans-serif; border-radius: 11px; padding: 12px 8px; cursor: pointer;
+    }
+    .s-foot .again { background: var(--surface); color: var(--navy-900); border: 1px solid var(--line); }
+    .s-foot .next { background: var(--green-500); color: var(--navy-950); border: 0; }
+    .s-foot svg { width: 14px; height: 14px; }
 
-    footer { border-top: 1px solid var(--line); padding: 24px 0 32px; font-size: 14px; color: var(--ink-soft); }
-    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-
-    @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 16px; }
-      .features { grid-template-columns: 1fr; gap: 28px; }
-      .band { flex-direction: column; align-items: flex-start; padding: 28px; }
+    .float {
+      position: absolute; z-index: 4; background: var(--surface); border-radius: 14px;
+      box-shadow: 0 12px 34px #05182a1f; padding: 10px 14px;
     }
-    @media (max-width: 480px) {
+    .float.done { top: 190px; left: max(-10px, calc(50% - 250px)); display: flex; align-items: center; gap: 10px; animation: bob 5s ease-in-out infinite; }
+    .float.done .ok { width: 28px; height: 28px; border-radius: 50%; background: var(--green-500); color: #fff; display: grid; place-items: center; }
+    .float.done .ok svg { width: 15px; height: 15px; stroke-width: 3; }
+    .float.done b { display: block; font-size: 12.5px; color: var(--navy-950); line-height: 1.2; }
+    .float.done small { font-size: 11px; color: var(--muted); }
+    .float.pct { top: 380px; right: max(-10px, calc(50% - 240px)); animation: bob 5s ease-in-out -2.5s infinite; }
+    .float.pct b { display: block; font: 700 24px/1 var(--display); color: var(--green-600); }
+    .float.pct small { font-size: 11px; color: var(--muted); }
+    @keyframes bob { 50% { transform: translateY(-8px); } }
+
+    .langs { position: relative; z-index: 4; margin-top: 22px; text-align: center; }
+    .langs p { margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--muted); }
+    .langs .row { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+    .langs button {
+      font: 600 13.5px/1 "DM Sans", sans-serif; cursor: pointer;
+      background: var(--surface); color: var(--navy-900); border: 1px solid var(--line);
+      padding: 9px 13px; border-radius: 999px; transition: all .15s;
+    }
+    .langs button:hover { border-color: var(--green-500); }
+    .langs button[aria-pressed="true"] { background: var(--navy-900); color: #fff; border-color: var(--navy-900); }
+
+    /* ---------- Sector strip ---------- */
+    .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #ffffff80; }
+    .strip .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 28px; flex-wrap: wrap; padding-top: 20px; padding-bottom: 20px; }
+    .strip strong { font: 700 13px/1.2 var(--display); letter-spacing: .1em; text-transform: uppercase; color: var(--navy-950); }
+    .strip ul { display: flex; flex-wrap: wrap; gap: 8px 26px; list-style: none; margin: 0; padding: 0; }
+    .strip li { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--muted); }
+    .strip li svg { width: 17px; height: 17px; color: var(--navy-700); }
+
+    /* ---------- Sections ---------- */
+    section.block { padding: 104px 0 0; }
+    .head { max-width: 640px; margin-bottom: 44px; }
+    h2 {
+      font: 600 clamp(32px, 4vw, 46px)/1.08 var(--display); letter-spacing: -0.035em;
+      color: var(--navy-950); margin: 18px 0 14px;
+    }
+    .head p { font-size: 18px; color: var(--muted); margin: 0; }
+
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: step; }
+    .step {
+      position: relative; background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); padding: 28px;
+    }
+    .step .ico { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; color: var(--navy-900); margin-bottom: 22px; }
+    .step .ico svg { width: 22px; height: 22px; }
+    .step::after {
+      counter-increment: step; content: "0" counter(step);
+      position: absolute; top: 26px; right: 28px; font: 700 14px/1 var(--display); color: #b9c5ce;
+    }
+    .step h3 { margin: 0 0 8px; font: 700 20px/1.25 var(--display); letter-spacing: -0.015em; color: var(--navy-950); }
+    .step p { margin: 0; color: var(--muted); }
+
+    /* App preview */
+    .preview { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+    .preview .stage::before { background: var(--blue-100); top: 60px; }
+    .home .s-top { padding-bottom: 14px; }
+    .home .s-bar .brandmini { display: flex; align-items: center; gap: 7px; font: 800 15px/1 var(--display); color: var(--navy-900); }
+    .home .s-bar .brandmini img { width: 18px; }
+    .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-100); display: grid; place-items: center; font-size: 10.5px; font-weight: 700; color: var(--navy-900); position: relative; }
+    .avatar::after { content: ""; position: absolute; right: 0; bottom: 1px; width: 7px; height: 7px; border-radius: 50%; background: var(--green-500); border: 1.5px solid #fff; }
+    .home .s-body { padding-top: 18px; }
+    .hello small { font-size: 12px; color: var(--muted); }
+    .hello b { display: block; font: 600 25px/1.15 var(--display); letter-spacing: -0.02em; color: var(--navy-950); }
+    .hello span { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 11px; color: var(--muted); }
+    .hello span svg { width: 13px; height: 13px; }
+    .next-card {
+      margin-top: 14px; border-radius: 16px; padding: 14px; color: #fff;
+      background: linear-gradient(150deg, var(--navy-800), var(--navy-950));
+    }
+    .next-card .top { display: flex; justify-content: space-between; font-size: 9px; font-weight: 700; letter-spacing: .1em; }
+    .next-card .top span:first-child { color: var(--green-400); }
+    .next-card .top span:last-child { color: #ffffffa8; }
+    .next-card h5 { margin: 10px 0 2px; font: 700 15.5px/1.25 var(--display); }
+    .next-card p { margin: 0; font-size: 11px; color: #ffffffb3; }
+    .next-card .bar { height: 5px; border-radius: 9px; background: #ffffff26; margin: 12px 0; overflow: hidden; }
+    .next-card .bar i { display: block; width: 35%; height: 100%; background: var(--green-500); }
+    .next-card .row { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #ffffffa8; }
+    .next-card .row span:last-child { display: inline-flex; align-items: center; gap: 4px; background: var(--green-500); color: var(--navy-950); font-weight: 700; padding: 7px 10px; border-radius: 9px; font-size: 10.5px; }
+    .next-card .row svg { width: 12px; height: 12px; }
+    .goal { margin-top: 10px; display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; }
+    .ring { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--green-500) 66%, var(--green-100) 0); }
+    .ring span { width: 28px; height: 28px; border-radius: 50%; background: #fff; display: grid; place-items: center; font-size: 11px; font-weight: 700; color: var(--navy-950); }
+    .goal b { display: block; font-size: 12px; color: var(--navy-950); line-height: 1.2; }
+    .goal small { font-size: 10px; color: var(--muted); }
+    .goal .streak { margin-left: auto; white-space: nowrap; font-size: 9.5px; font-weight: 700; color: #b26a00; background: var(--yellow-100); padding: 5px 8px; border-radius: 999px; }
+    .topics-h { display: flex; justify-content: space-between; align-items: baseline; margin: 16px 0 8px; }
+    .topics-h b { font: 700 13.5px/1 var(--display); color: var(--navy-950); }
+    .topics-h small { font-size: 10px; font-weight: 700; color: var(--green-600); }
+    .topics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .topic { background: var(--surface); border: 1px solid var(--line); border-radius: 13px; padding: 10px; }
+    .topic .ti { width: 28px; height: 28px; border-radius: 9px; display: grid; place-items: center; color: var(--navy-900); margin-bottom: 8px; }
+    .topic .ti svg { width: 15px; height: 15px; }
+    .topic b { display: block; font-size: 11.5px; line-height: 1.25; color: var(--navy-950); }
+    .topic small { font-size: 9.5px; color: var(--muted); }
+    .tabs { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--surface); border-top: 1px solid var(--line); padding: 9px 6px 14px; }
+    .tabs span { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 9px; color: #8b9aa8; }
+    .tabs span.on { color: var(--green-600); font-weight: 700; }
+    .tabs svg { width: 16px; height: 16px; }
+
+    .features { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .features li { display: flex; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 18px 20px; }
+    .features .ico { flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; color: var(--navy-900); }
+    .features .ico svg { width: 20px; height: 20px; }
+    .features b { display: block; font: 700 17px/1.3 var(--display); color: var(--navy-950); margin-bottom: 2px; }
+    .features span { color: var(--muted); font-size: 15px; }
+
+    /* Employers */
+    .employers {
+      position: relative; overflow: hidden; border-radius: 32px; color: #fff;
+      background: linear-gradient(150deg, var(--navy-800), var(--navy-950) 70%);
+      padding: 64px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center;
+    }
+    .employers::after {
+      content: ""; position: absolute; right: -120px; top: -160px; width: 420px; height: 420px; border-radius: 50%;
+      background: radial-gradient(closest-side, #24c78740, transparent); pointer-events: none;
+    }
+    .employers .eyebrow { background: #24c7872a; color: var(--green-400); }
+    .employers h2 { color: #fff; }
+    .employers p.lead { color: #ffffffb8; margin-bottom: 30px; }
+    .benefits { position: relative; z-index: 1; list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .benefits li { display: flex; gap: 14px; align-items: flex-start; background: #ffffff0d; border: 1px solid #ffffff1a; border-radius: var(--radius-md); padding: 16px 18px; }
+    .benefits .ico { flex: none; width: 36px; height: 36px; border-radius: 10px; background: #24c78726; color: var(--green-400); display: grid; place-items: center; }
+    .benefits b { display: block; font-size: 16px; }
+    .benefits span { font-size: 14px; color: #ffffffa8; }
+
+    /* Final CTA */
+    .final { text-align: center; padding: 112px 0 96px; }
+    .final img { width: 88px; margin: 0 auto 8px; }
+    .final h2 { margin-left: auto; margin-right: auto; max-width: 14em; }
+    .final p { color: var(--muted); font-size: 18px; margin: 0 auto 30px; max-width: 30em; }
+    .final form.waitlist { margin: 0 auto; }
+
+    footer { border-top: 1px solid var(--line); padding: 26px 0 34px; font-size: 14px; color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    footer a { text-decoration: none; font-weight: 600; color: var(--navy-700); }
+    footer a:hover { color: var(--green-600); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 960px) {
+      .hero .wrap, .preview, .employers { grid-template-columns: 1fr; }
+      .hero { padding-bottom: 72px; }
+      .hero .stage { margin-top: 12px; }
+      .preview .stage { order: 2; }
+      .steps { grid-template-columns: 1fr; }
+      .employers { padding: 40px 28px; }
+      section.block { padding-top: 80px; }
+    }
+    @media (max-width: 560px) {
       .wrap { padding-left: 16px; padding-right: 16px; }
-      header { padding: 20px 0; }
-      .demo { padding: 20px; border-radius: 22px; }
-      button.cta { width: 100%; }
+      .nav a.link { display: none; }
+      .lead { font-size: 17px; }
+      form.waitlist { flex-direction: column; padding: 8px; }
+      form.waitlist input { padding: 12px 10px; }
+      .float.done { left: -4px; top: 200px; }
+      .float.pct { right: -4px; }
+      .stage::before { width: 340px; height: 340px; }
+      .employers { border-radius: 24px; }
+      .final { padding-top: 88px; }
+    }
+    @media (max-width: 360px) {
+      .phone { transform: scale(.92); transform-origin: top center; margin-bottom: -48px; }
     }
     @media (prefers-reduced-motion: reduce) {
-      *, *::before { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap">
-      <a class="logo" href="/" aria-label="Jargo">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <rect width="64" height="64" rx="16" fill="#14213d"/>
-          <g fill="#ffb547">
-            <rect x="13" y="26" width="6" height="12" rx="3"/>
-            <rect x="23" y="18" width="6" height="28" rx="3"/>
-            <rect x="33" y="12" width="6" height="40" rx="3"/>
-            <rect x="43" y="22" width="6" height="20" rx="3"/>
-          </g>
-        </svg>
-        <span>jargo</span>
+      <a class="brand" href="./" aria-label="Jargo, naar het begin">
+        <img src="assets/jargo-mark.png" alt="" width="89" height="102">
+        <span>Jargo</span>
       </a>
-      <span class="badge">Binnenkort</span>
+      <nav class="nav">
+        <a class="link" href="#werkgevers">Voor werkgevers <i data-lucide="arrow-right"></i></a>
+        <span class="soon">Binnenkort</span>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section class="wrap hero">
-      <div>
-        <h1>Nederlands voor op de <mark>werkvloer</mark>.</h1>
-        <p class="lead">
-          Korte audiolessen van 5 tot 10 minuten. Luisteren en spreken in je eigen tempo,
-          met de woorden die je écht nodig hebt in het magazijn, de haven, de schoonmaak of de productie.
-        </p>
-
-        <form id="waitlist" novalidate>
-          <label class="sr" for="email">E-mailadres</label>
-          <input id="email" name="email" type="email" placeholder="jouw@email.be" autocomplete="email" required>
-          <button class="cta" type="submit">Hou me op de hoogte</button>
-        </form>
-        <p class="form-note" id="note" role="status">Als eerste weten wanneer Jargo live gaat. Geen spam.</p>
-      </div>
-
-      <aside class="demo" aria-label="Probeer een zin">
-        <div class="demo-top">
-          <strong>Probeer het even</strong>
-          <small>Les 1 · Op het werk</small>
-        </div>
-        <p class="hint">Tik op een zin en luister.</p>
-        <div class="wave" id="wave" aria-hidden="true"></div>
-        <ul class="phrases">
-          <li><button class="phrase" type="button" data-say="Goedemorgen. Waar moet ik vandaag beginnen?">
-            <span class="play"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z" fill="currentColor"/></svg></span>
-            <span><b>Goedemorgen. Waar moet ik vandaag beginnen?</b><span>Begroeten &amp; instructies vragen</span></span>
-          </button></li>
-          <li><button class="phrase" type="button" data-say="Sorry, ik begrijp het niet. Kunt u het herhalen?">
-            <span class="play"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z" fill="currentColor"/></svg></span>
-            <span><b>Sorry, ik begrijp het niet. Kunt u het herhalen?</b><span>Om hulp vragen</span></span>
-          </button></li>
-          <li><button class="phrase" type="button" data-say="Waar liggen de handschoenen en de veiligheidsschoenen?">
-            <span class="play"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z" fill="currentColor"/></svg></span>
-            <span><b>Waar liggen de handschoenen?</b><span>Veiligheid</span></span>
-          </button></li>
-        </ul>
-      </aside>
-    </section>
-
-    <section class="wrap features" aria-label="Wat is Jargo">
-      <div class="feature">
-        <div class="num">5–10 min</div>
-        <h3>Past in elke pauze</h3>
-        <p>Korte lessen die je beluistert op de bus, in de kantine of thuis.</p>
-      </div>
-      <div class="feature">
-        <div class="num">Audio eerst</div>
-        <h3>Luisteren en spreken</h3>
-        <p>Weinig lezen, veel horen en nazeggen. Zoals je een taal echt leert.</p>
-      </div>
-      <div class="feature">
-        <div class="num">Werktaal</div>
-        <h3>Woorden van de werkvloer</h3>
-        <p>Veiligheid, instructies, collega's en planning. Geen schoolboekzinnen.</p>
-      </div>
-    </section>
-
-    <section class="wrap">
-      <div class="band">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
         <div>
-          <h2>Werkgever, uitzendkantoor of opleidingspartner?</h2>
-          <p>We zoeken bedrijven om Jargo samen mee te testen met hun medewerkers. Laat van je horen.</p>
+          <span class="eyebrow"><i data-lucide="sparkles"></i> Nederlands voor op de werkvloer</span>
+          <h1>Leer Nederlands.<br><span class="g">Werk veilig.</span><br>Communiceer beter.</h1>
+          <p class="lead">Praktische taallessen voor jouw werk. Kort, duidelijk en in jouw eigen taal uitgelegd. Jargo komt binnenkort, schrijf je in en hoor het als eerste.</p>
+
+          <form class="waitlist" novalidate>
+            <label class="sr" for="email-top">E-mailadres</label>
+            <input id="email-top" name="email" type="email" placeholder="jouw@email.be" autocomplete="email" required>
+            <button class="btn btn-primary" type="submit">Zet me op de wachtlijst <i data-lucide="arrow-right"></i></button>
+          </form>
+          <p class="form-note" role="status">Geen spam. Je hoort van ons zodra Jargo live gaat.</p>
+
+          <div class="meta">
+            <span><i data-lucide="clock"></i> 5 minuten per dag</span>
+            <span><i data-lucide="headphones"></i> Luisteren en nazeggen</span>
+            <span><i data-lucide="shield-check"></i> Veilig en eenvoudig</span>
+          </div>
         </div>
-        <a class="btn" id="partner" href="#">Neem contact op</a>
+
+        <div class="stage" aria-label="Probeer een les">
+          <div class="float done" aria-hidden="true">
+            <span class="ok"><i data-lucide="check"></i></span>
+            <span><b>Les voltooid</b><small>Goed bezig, Ahmed!</small></span>
+          </div>
+          <div class="float pct" aria-hidden="true">
+            <b id="pct">35%</b><small>jouw voortgang</small>
+          </div>
+
+          <div class="phone">
+            <div class="screen">
+              <div class="s-top">
+                <div class="s-bar">
+                  <span class="circle-btn"><i data-lucide="chevron-left"></i></span>
+                  <b>Woorden leren</b>
+                  <small id="count">1 / 6</small>
+                </div>
+                <div class="progress"><i id="bar"></i></div>
+              </div>
+              <div class="s-body">
+                <h4>Bekijk en luister</h4>
+                <p class="sub">Tik op het geluid om te luisteren</p>
+                <div class="visual" id="visual">
+                  <span id="icon"></span>
+                  <span class="tag" id="tag">WERKTUIG</span>
+                </div>
+                <div class="word">
+                  <span class="lbl">NEDERLANDS</span>
+                  <div class="word-row">
+                    <div>
+                      <strong id="word">Heftruck</strong>
+                      <em id="syll">hef · truck</em>
+                    </div>
+                    <button class="speak" id="speak" type="button" aria-label="Luister naar het woord"><i data-lucide="volume-2"></i></button>
+                  </div>
+                  <div class="trans">
+                    <span class="code" id="code">TR</span>
+                    <span><small id="langname">Turks</small><b id="trans">Forklift</b></span>
+                  </div>
+                </div>
+              </div>
+              <div class="s-foot">
+                <button class="again" id="again" type="button"><i data-lucide="volume-2"></i> Nog een keer</button>
+                <button class="next" id="next" type="button">Volgende <i data-lucide="arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="langs">
+            <p>Uitleg in jouw taal</p>
+            <div class="row" id="langs">
+              <button type="button" data-lang="tr" aria-pressed="true">Türkçe</button>
+              <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
+              <button type="button" data-lang="pl" aria-pressed="false">Polski</button>
+              <button type="button" data-lang="en" aria-pressed="false">English</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sectors -->
+    <div class="strip">
+      <div class="wrap">
+        <strong>Gemaakt voor mensen die doen.</strong>
+        <ul>
+          <li><i data-lucide="package"></i> Logistiek</li>
+          <li><i data-lucide="cog"></i> Productie</li>
+          <li><i data-lucide="hard-hat"></i> Bouw</li>
+          <li><i data-lucide="building-2"></i> Haven</li>
+          <li><i data-lucide="sparkles"></i> Schoonmaak</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <section class="block">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow"><i data-lucide="headphones"></i> Zo werkt het</span>
+          <h2>Leren in je pauze, gebruiken op de vloer.</h2>
+          <p>Geen dikke boeken of lange lessen. Jargo leert je de woorden en zinnen die je morgen al nodig hebt.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="ico" style="background: var(--green-100)"><i data-lucide="headphones"></i></div>
+            <h3>Luister</h3>
+            <p>Hoor hoe een woord klinkt, zo vaak als je wil. Met uitleg in je eigen taal.</p>
+          </div>
+          <div class="step">
+            <div class="ico" style="background: var(--purple-100)"><i data-lucide="mic"></i></div>
+            <h3>Zeg het na</h3>
+            <p>Oefen hardop. Spreken is belangrijker dan lezen of schrijven.</p>
+          </div>
+          <div class="step">
+            <div class="ico" style="background: var(--orange-100)"><i data-lucide="hard-hat"></i></div>
+            <h3>Gebruik het op het werk</h3>
+            <p>Veiligheid, instructies, collega's en planning: echte situaties van de werkvloer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App preview -->
+    <section class="block">
+      <div class="wrap preview">
+        <div class="stage" aria-hidden="true">
+          <div class="phone home">
+            <div class="screen">
+              <div class="s-top">
+                <div class="s-bar">
+                  <span class="brandmini"><img src="assets/jargo-mark.png" alt=""> Jargo</span>
+                  <span class="avatar">AK</span>
+                </div>
+              </div>
+              <div class="s-body">
+                <div class="hello">
+                  <small>Goedemorgen,</small>
+                  <b>Ahmed!</b>
+                  <span><i data-lucide="briefcase"></i> Logistiek · Van Dijk Distributie</span>
+                </div>
+                <div class="next-card">
+                  <div class="top"><span>JOUW VOLGENDE LES</span><span>2 VAN 5</span></div>
+                  <h5>Basiswoorden in het magazijn</h5>
+                  <p>Leer 8 woorden die je elke dag gebruikt.</p>
+                  <div class="bar"><i></i></div>
+                  <div class="row"><span>35% voltooid</span><span>Verder leren <i data-lucide="arrow-right"></i></span></div>
+                </div>
+                <div class="goal">
+                  <span class="ring"><span>2/3</span></span>
+                  <span><b>Dagdoel bijna behaald</b><small>Nog één oefening vandaag</small></span>
+                  <span class="streak">4 dagen</span>
+                </div>
+                <div class="topics-h"><b>Leer voor jouw werk</b><small>Alles bekijken</small></div>
+                <div class="topics">
+                  <div class="topic"><span class="ti" style="background: var(--green-100)"><i data-lucide="shield-check"></i></span><b>Veiligheid</b><small>8 lessen</small></div>
+                  <div class="topic"><span class="ti" style="background: var(--blue-100)"><i data-lucide="cog"></i></span><b>Machines en gereedschap</b><small>6 lessen</small></div>
+                </div>
+              </div>
+              <div class="tabs">
+                <span class="on"><i data-lucide="house"></i>Home</span>
+                <span><i data-lucide="book-open"></i>Lessen</span>
+                <span><i data-lucide="chart-line"></i>Resultaten</span>
+                <span><i data-lucide="settings"></i>Profiel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="head" style="margin-bottom: 32px">
+            <span class="eyebrow"><i data-lucide="smartphone"></i> De app</span>
+            <h2>Elke dag een klein stapje vooruit.</h2>
+            <p>Jargo past op elke smartphone en in elke pauze. Je ziet meteen hoe ver je staat.</p>
+          </div>
+          <ul class="features">
+            <li><span class="ico" style="background: var(--green-100)"><i data-lucide="languages"></i></span><div><b>Uitleg in je eigen taal</b><span>Nieuwe woorden met vertaling, zodat je altijd weet wat je leert.</span></div></li>
+            <li><span class="ico" style="background: var(--blue-100)"><i data-lucide="briefcase"></i></span><div><b>Lessen per sector</b><span>Logistiek, productie, bouw of schoonmaak: je leert de taal van jouw job.</span></div></li>
+            <li><span class="ico" style="background: var(--yellow-100)"><i data-lucide="trending-up"></i></span><div><b>Dagdoelen en voortgang</b><span>Korte oefeningen, een dagdoel en een reeks om gemotiveerd te blijven.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Employers -->
+    <section class="block" id="werkgevers">
+      <div class="wrap">
+        <div class="employers">
+          <div style="position: relative; z-index: 1">
+            <span class="eyebrow"><i data-lucide="building-2"></i> Voor werkgevers</span>
+            <h2>Een veiligere werkvloer begint bij elkaar begrijpen.</h2>
+            <p class="lead">Werkgever, uitzendkantoor of opleidingspartner? We zoeken bedrijven die Jargo samen met hun medewerkers willen testen.</p>
+            <a class="btn btn-primary" id="partner" href="#">Word pilotpartner <i data-lucide="arrow-right"></i></a>
+          </div>
+          <ul class="benefits">
+            <li><span class="ico"><i data-lucide="shield-check"></i></span><div><b>Minder misverstanden</b><span>Medewerkers begrijpen veiligheidsinstructies en werkopdrachten.</span></div></li>
+            <li><span class="ico"><i data-lucide="users"></i></span><div><b>Sneller ingewerkt</b><span>Nieuwe collega's leren de woorden van jouw bedrijf vanaf dag één.</span></div></li>
+            <li><span class="ico"><i data-lucide="layout-dashboard"></i></span><div><b>Voortgang in één overzicht</b><span>Zie wie actief leert en welke onderwerpen al gekend zijn.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final">
+      <div class="wrap">
+        <img src="assets/jargo-logo.png" alt="Jargo" width="150" height="158">
+        <h2>Wees er als eerste bij.</h2>
+        <p>Jargo komt binnenkort. Laat je e-mailadres achter en we sturen je een bericht zodra je kunt starten.</p>
+        <form class="waitlist" novalidate>
+          <label class="sr" for="email-bottom">E-mailadres</label>
+          <input id="email-bottom" name="email" type="email" placeholder="jouw@email.be" autocomplete="email" required>
+          <button class="btn btn-primary" type="submit">Zet me op de wachtlijst <i data-lucide="arrow-right"></i></button>
+        </form>
+        <p class="form-note" role="status"></p>
       </div>
     </section>
   </main>
@@ -316,6 +627,7 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
   <script>
     // ---- Instellingen ----------------------------------------------------
     // Contactadres dat op de pagina verschijnt.
@@ -325,87 +637,127 @@
     const FORM_ENDPOINT = "";
     // ----------------------------------------------------------------------
 
+    const drawIcons = () => window.lucide && lucide.createIcons();
+    drawIcons();
+
     document.getElementById("year").textContent = new Date().getFullYear();
     const mail = document.getElementById("mail");
     mail.textContent = CONTACT_EMAIL;
     mail.href = "mailto:" + CONTACT_EMAIL;
     document.getElementById("partner").href =
-      "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Partner worden van Jargo");
+      "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Pilotpartner worden van Jargo");
 
-    // Waitlist
-    const form = document.getElementById("waitlist");
-    const note = document.getElementById("note");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = form.email.value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        note.className = "form-note";
-        note.textContent = "Vul een geldig e-mailadres in.";
-        form.email.focus();
-        return;
-      }
-      if (FORM_ENDPOINT) {
-        try {
-          const res = await fetch(FORM_ENDPOINT, {
-            method: "POST",
-            headers: { "Accept": "application/json", "Content-Type": "application/json" },
-            body: JSON.stringify({ email })
-          });
-          if (!res.ok) throw new Error();
-          note.className = "form-note ok";
-          note.textContent = "Bedankt! We laten het je weten zodra Jargo live is.";
-          form.reset();
-        } catch {
-          note.className = "form-note";
-          note.textContent = "Er ging iets mis. Probeer het later opnieuw.";
+    // Wachtlijst
+    document.querySelectorAll("form.waitlist").forEach(form => {
+      const note = form.nextElementSibling;
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = form.email.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          note.className = "form-note err";
+          note.textContent = "Vul een geldig e-mailadres in.";
+          form.email.focus();
+          return;
         }
-      } else {
-        location.href = "mailto:" + CONTACT_EMAIL +
-          "?subject=" + encodeURIComponent("Wachtlijst Jargo") +
-          "&body=" + encodeURIComponent("Zet mij op de wachtlijst: " + email);
-        note.className = "form-note ok";
-        note.textContent = "Je mailprogramma opent. Verstuur de mail om je in te schrijven.";
-      }
+        if (FORM_ENDPOINT) {
+          try {
+            const res = await fetch(FORM_ENDPOINT, {
+              method: "POST",
+              headers: { "Accept": "application/json", "Content-Type": "application/json" },
+              body: JSON.stringify({ email })
+            });
+            if (!res.ok) throw new Error();
+            note.className = "form-note ok";
+            note.textContent = "Bedankt! Je staat op de wachtlijst.";
+            form.reset();
+          } catch {
+            note.className = "form-note err";
+            note.textContent = "Er ging iets mis. Probeer het later opnieuw.";
+          }
+        } else {
+          location.href = "mailto:" + CONTACT_EMAIL +
+            "?subject=" + encodeURIComponent("Wachtlijst Jargo") +
+            "&body=" + encodeURIComponent("Zet mij op de wachtlijst: " + email);
+          note.className = "form-note ok";
+          note.textContent = "Je mailprogramma opent. Verstuur de mail om je in te schrijven.";
+        }
+      });
     });
 
-    // Waveform
-    const wave = document.getElementById("wave");
-    for (let i = 0; i < 28; i++) {
-      const bar = document.createElement("i");
-      bar.style.setProperty("--h", (35 + Math.round(Math.sin(i * 0.7) * 25 + Math.random() * 40)) + "%");
-      bar.style.animationDelay = (i * 45) + "ms";
-      wave.appendChild(bar);
+    // Interactieve les
+    const LANGS = {
+      tr: { code: "TR", name: "Turks" },
+      ar: { code: "AR", name: "Arabisch" },
+      pl: { code: "PL", name: "Pools" },
+      en: { code: "EN", name: "Engels" }
+    };
+    const WORDS = [
+      { nl: "Heftruck", syll: "hef · truck", tag: "WERKTUIG", icon: "forklift", bg: "var(--orange-100)",
+        tr: "Forklift", ar: "رافعة شوكية", pl: "Wózek widłowy", en: "Forklift" },
+      { nl: "Veiligheidshelm", syll: "vei · lig · heids · helm", tag: "VEILIGHEID", icon: "hard-hat", bg: "var(--yellow-100)",
+        tr: "Baret", ar: "خوذة الأمان", pl: "Kask ochronny", en: "Safety helmet" },
+      { nl: "Handschoenen", syll: "hand · schoe · nen", tag: "VEILIGHEID", icon: "hand", bg: "var(--green-100)",
+        tr: "Eldiven", ar: "قفازات", pl: "Rękawice", en: "Gloves" },
+      { nl: "Pallet", syll: "pal · let", tag: "MAGAZIJN", icon: "package", bg: "var(--blue-100)",
+        tr: "Palet", ar: "منصة نقالة", pl: "Paleta", en: "Pallet" },
+      { nl: "Nooduitgang", syll: "nood · uit · gang", tag: "VEILIGHEID", icon: "door-open", bg: "var(--green-100)",
+        tr: "Acil çıkış", ar: "مخرج الطوارئ", pl: "Wyjście awaryjne", en: "Emergency exit" },
+      { nl: "Pauze", syll: "pau · ze", tag: "OP HET WERK", icon: "coffee", bg: "var(--purple-100)",
+        tr: "Mola", ar: "استراحة", pl: "Przerwa", en: "Break" }
+    ];
+    let idx = 0, lang = "tr";
+    const $ = id => document.getElementById(id);
+
+    function render() {
+      const w = WORDS[idx];
+      $("word").textContent = w.nl;
+      $("syll").textContent = w.syll;
+      $("tag").textContent = w.tag;
+      $("visual").style.background = w.bg;
+      $("icon").innerHTML = '<i data-lucide="' + w.icon + '"></i>';
+      $("code").textContent = LANGS[lang].code;
+      $("langname").textContent = LANGS[lang].name;
+      const t = $("trans");
+      t.textContent = w[lang];
+      t.dir = lang === "ar" ? "rtl" : "ltr";
+      $("count").textContent = (idx + 1) + " / " + WORDS.length;
+      const pct = Math.round(((idx + 1) / WORDS.length) * 100);
+      $("bar").style.width = pct + "%";
+      $("pct").textContent = pct + "%";
+      drawIcons();
     }
 
-    // Spreek zinnen uit met de ingebouwde stem van de browser
+    // Spreek met de ingebouwde Nederlandse stem van de browser
     const synth = window.speechSynthesis;
     let voice = null;
     function pickVoice() {
       if (!synth) return;
-      const voices = synth.getVoices();
-      voice = voices.find(v => v.lang === "nl-BE") ||
-              voices.find(v => v.lang && v.lang.startsWith("nl")) || null;
+      const v = synth.getVoices();
+      voice = v.find(x => x.lang === "nl-BE") || v.find(x => x.lang && x.lang.startsWith("nl")) || null;
     }
     if (synth) { pickVoice(); synth.onvoiceschanged = pickVoice; }
-
-    const buttons = document.querySelectorAll(".phrase");
-    function stop() {
-      wave.classList.remove("live");
-      buttons.forEach(b => b.classList.remove("playing"));
-    }
-    buttons.forEach(btn => btn.addEventListener("click", () => {
-      stop();
-      btn.classList.add("playing");
-      wave.classList.add("live");
-      if (!synth) { setTimeout(stop, 2200); return; }
+    function say() {
+      const btn = $("speak");
+      btn.classList.add("on");
+      if (!synth) { setTimeout(() => btn.classList.remove("on"), 1200); return; }
       synth.cancel();
-      const u = new SpeechSynthesisUtterance(btn.dataset.say);
+      const u = new SpeechSynthesisUtterance(WORDS[idx].nl);
       u.lang = voice ? voice.lang : "nl-BE";
       if (voice) u.voice = voice;
-      u.rate = 0.85;
-      u.onend = u.onerror = stop;
+      u.rate = 0.8;
+      u.onend = u.onerror = () => btn.classList.remove("on");
       synth.speak(u);
+    }
+
+    $("speak").addEventListener("click", say);
+    $("again").addEventListener("click", say);
+    $("next").addEventListener("click", () => { idx = (idx + 1) % WORDS.length; render(); });
+    document.querySelectorAll("#langs button").forEach(b => b.addEventListener("click", () => {
+      lang = b.dataset.lang;
+      document.querySelectorAll("#langs button").forEach(x => x.setAttribute("aria-pressed", x === b));
+      render();
     }));
+    render();
   </script>
 </body>
 </html>
